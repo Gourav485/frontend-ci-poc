@@ -1,4 +1,3 @@
----
 name: React CI Pipeline
 
 on:
@@ -6,11 +5,15 @@ on:
     branches:
       - main
 
-  pull_request: {}
+pull_request:
 
 jobs:
   react-ci:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ot-microservices/frontend
 
     steps:
       - name: Checkout Source Code
